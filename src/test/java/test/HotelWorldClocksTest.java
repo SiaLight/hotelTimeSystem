@@ -90,4 +90,32 @@ class HotelWorldClocksTest {
         // Assert
         assertEquals(5, moscowClock.getTime());
 	}
+	
+	@Test 
+	
+	public void the_time_of_beijing_test() {
+		cityClock beijingClock = new cityClock(8);
+        hotelWorldClockSystem.attach(beijingClock);
+
+        // Act
+        phoneClock.setHotelWorldClockSystem(hotelWorldClockSystem);
+        phoneClock.setTime(9);
+
+        // Assert
+        assertEquals(9, beijingClock.getTime());
+	}
+	
+	@Test 
+	
+	public void the_time_of_sydney_test() {
+		cityClock sydneyClock = new cityClock(10);
+        hotelWorldClockSystem.attach(sydneyClock);
+
+        // Act
+        phoneClock.setHotelWorldClockSystem(hotelWorldClockSystem);
+        phoneClock.setTime(9);
+
+        // Assert
+        assertEquals(11, sydneyClock.getTime());
+	}
 }
